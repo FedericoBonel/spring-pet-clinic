@@ -17,7 +17,7 @@
 
     <groupId>com.fede-bonel</groupId>
     <artifactId>spring-pet-clinic</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.3</version>
     <name>spring-pet-clinic</name>
     <description>spring-pet-clinic</description>
     <properties>
@@ -52,7 +52,7 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/FedericoBonel/spring-pet-clinic.git</developerConnection>
-      <tag>HEAD</tag>
+      <tag>spring-pet-clinic-0.0.3</tag>
   </scm>
 
 </project>
