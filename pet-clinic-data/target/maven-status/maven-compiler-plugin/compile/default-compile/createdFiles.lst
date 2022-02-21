@@ -1,0 +1,5 @@
+com\fedebonel\springpetclinic\model\Owner.class
+com\fedebonel\springpetclinic\model\Vet.class
+com\fedebonel\springpetclinic\model\Person.class
+com\fedebonel\springpetclinic\model\Pet.class
+com\fedebonel\springpetclinic\model\PetType.class

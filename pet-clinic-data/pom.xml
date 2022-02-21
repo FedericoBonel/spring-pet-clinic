@@ -14,6 +14,8 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <!-- Tells spring boot to not repackage the JAR of this module making it more lean
+        [since we don't need to execute it] -->
         <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
     </properties>
 
