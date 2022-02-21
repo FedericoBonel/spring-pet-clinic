@@ -1,7 +1,7 @@
 package com.fedebonel.springpetclinic.model;
 
 /**
- * POJO For a person
+ * POJO For a person related to vet
  */
 public class Person {
 

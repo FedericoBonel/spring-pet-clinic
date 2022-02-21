@@ -3,7 +3,7 @@ package com.fedebonel.springpetclinic.model;
 import java.time.LocalDate;
 
 /**
- * POJO for Pet
+ * POJO for Pet related to vet
  */
 public class Pet {
 

@@ -1,7 +1,7 @@
 package com.fedebonel.springpetclinic.model;
 
 /**
- * POJO For the different pet types
+ * POJO For the different pet types of the vet
  */
 public class PetType {
     private String name;
