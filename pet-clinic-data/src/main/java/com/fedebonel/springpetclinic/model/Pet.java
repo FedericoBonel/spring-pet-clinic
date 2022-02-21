@@ -5,7 +5,7 @@ import java.time.LocalDate;
 /**
  * POJO for Pet related to vet
  */
-public class Pet {
+public class Pet extends BaseEntity{
 
     public PetType petType;
     public Owner owner;
