@@ -50,4 +50,8 @@
         </pluginManagement>
     </build>
 
+    <scm>
+        <developerConnection>scm:git:https://github.com/FedericoBonel/spring-pet-clinic.git</developerConnection>
+    </scm>
+
 </project>
