@@ -2,12 +2,14 @@ package com.fedebonel.springpetclinic.services.map;
 
 import com.fedebonel.springpetclinic.model.Owner;
 import com.fedebonel.springpetclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 /**
  * Implementation of the map service for owners
  */
+@Service
 public class OwnerServiceMap extends AbstractServiceMap<Owner, Long> implements OwnerService {
 
     @Override
