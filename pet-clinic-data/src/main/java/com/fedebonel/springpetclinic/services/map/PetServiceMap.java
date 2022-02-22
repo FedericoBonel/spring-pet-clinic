@@ -1,7 +1,7 @@
 package com.fedebonel.springpetclinic.services.map;
 
 import com.fedebonel.springpetclinic.model.Pet;
-import com.fedebonel.springpetclinic.services.CrudService;
+import com.fedebonel.springpetclinic.services.PetService;
 
 import java.util.Set;
 
@@ -9,7 +9,7 @@ import java.util.Set;
 /**
  * Implementation of the map service for pets
  */
-public class PetServiceMap extends AbstractServiceMap<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractServiceMap<Pet, Long> implements PetService {
 
     @Override
     public Set<Pet> findAll() {

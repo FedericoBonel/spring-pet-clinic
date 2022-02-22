@@ -1,14 +1,14 @@
 package com.fedebonel.springpetclinic.services.map;
 
 import com.fedebonel.springpetclinic.model.Owner;
-import com.fedebonel.springpetclinic.services.CrudService;
+import com.fedebonel.springpetclinic.services.OwnerService;
 
 import java.util.Set;
 
 /**
  * Implementation of the map service for owners
  */
-public class OwnerServiceMap extends AbstractServiceMap<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractServiceMap<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -33,5 +33,10 @@ public class OwnerServiceMap extends AbstractServiceMap<Owner, Long> implements 
     @Override
     public void deleteById(Long id) {
         super.deleteById(id);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }
