@@ -18,6 +18,10 @@ public class DataInitializer implements CommandLineRunner {
    private final OwnerService ownerService;
    private final VetService vetService;
 
+    /**
+     * Springs generates the dependency injection by
+     * itself selecting the implementation that's needed each time
+     */
     public DataInitializer(OwnerService ownerService, VetService vetService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
