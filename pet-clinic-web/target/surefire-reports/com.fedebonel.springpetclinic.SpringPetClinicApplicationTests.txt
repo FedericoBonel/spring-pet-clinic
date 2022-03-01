@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.fedebonel.springpetclinic.SpringPetClinicApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.811 s - in com.fedebonel.springpetclinic.SpringPetClinicApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.287 s - in com.fedebonel.springpetclinic.SpringPetClinicApplicationTests

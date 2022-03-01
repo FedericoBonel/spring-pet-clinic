@@ -1,5 +1,14 @@
-D:\Estudios\JavaSpringUdemyCourse\spring-pet-clinic\pet-clinic-data\src\main\java\com\fedebonel\springpetclinic\model\PetType.java
+D:\Estudios\JavaSpringUdemyCourse\spring-pet-clinic\pet-clinic-data\src\main\java\com\fedebonel\springpetclinic\services\OwnerService.java
 D:\Estudios\JavaSpringUdemyCourse\spring-pet-clinic\pet-clinic-data\src\main\java\com\fedebonel\springpetclinic\model\Owner.java
-D:\Estudios\JavaSpringUdemyCourse\spring-pet-clinic\pet-clinic-data\src\main\java\com\fedebonel\springpetclinic\model\Person.java
+D:\Estudios\JavaSpringUdemyCourse\spring-pet-clinic\pet-clinic-data\src\main\java\com\fedebonel\springpetclinic\services\map\VetServiceMap.java
+D:\Estudios\JavaSpringUdemyCourse\spring-pet-clinic\pet-clinic-data\src\main\java\com\fedebonel\springpetclinic\services\map\OwnerServiceMap.java
+D:\Estudios\JavaSpringUdemyCourse\spring-pet-clinic\pet-clinic-data\src\main\java\com\fedebonel\springpetclinic\services\PetService.java
 D:\Estudios\JavaSpringUdemyCourse\spring-pet-clinic\pet-clinic-data\src\main\java\com\fedebonel\springpetclinic\model\Vet.java
+D:\Estudios\JavaSpringUdemyCourse\spring-pet-clinic\pet-clinic-data\src\main\java\com\fedebonel\springpetclinic\model\BaseEntity.java
+D:\Estudios\JavaSpringUdemyCourse\spring-pet-clinic\pet-clinic-data\src\main\java\com\fedebonel\springpetclinic\services\map\AbstractServiceMap.java
+D:\Estudios\JavaSpringUdemyCourse\spring-pet-clinic\pet-clinic-data\src\main\java\com\fedebonel\springpetclinic\model\PetType.java
+D:\Estudios\JavaSpringUdemyCourse\spring-pet-clinic\pet-clinic-data\src\main\java\com\fedebonel\springpetclinic\services\map\PetServiceMap.java
+D:\Estudios\JavaSpringUdemyCourse\spring-pet-clinic\pet-clinic-data\src\main\java\com\fedebonel\springpetclinic\model\Person.java
+D:\Estudios\JavaSpringUdemyCourse\spring-pet-clinic\pet-clinic-data\src\main\java\com\fedebonel\springpetclinic\services\CrudService.java
 D:\Estudios\JavaSpringUdemyCourse\spring-pet-clinic\pet-clinic-data\src\main\java\com\fedebonel\springpetclinic\model\Pet.java
+D:\Estudios\JavaSpringUdemyCourse\spring-pet-clinic\pet-clinic-data\src\main\java\com\fedebonel\springpetclinic\services\VetService.java

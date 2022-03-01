@@ -1,1 +1,5 @@
+com\fedebonel\springpetclinic\bootstrap\DataInitializer.class
+com\fedebonel\springpetclinic\controllers\IndexController.class
 com\fedebonel\springpetclinic\SpringPetClinicApplication.class
+com\fedebonel\springpetclinic\controllers\VetController.class
+com\fedebonel\springpetclinic\controllers\OwnerController.class

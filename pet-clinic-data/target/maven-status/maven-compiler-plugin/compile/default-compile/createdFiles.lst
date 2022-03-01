@@ -1,5 +1,14 @@
-com\fedebonel\springpetclinic\model\Owner.class
 com\fedebonel\springpetclinic\model\Vet.class
-com\fedebonel\springpetclinic\model\Person.class
+com\fedebonel\springpetclinic\services\OwnerService.class
+com\fedebonel\springpetclinic\model\BaseEntity.class
+com\fedebonel\springpetclinic\model\Owner.class
+com\fedebonel\springpetclinic\services\PetService.class
 com\fedebonel\springpetclinic\model\Pet.class
 com\fedebonel\springpetclinic\model\PetType.class
+com\fedebonel\springpetclinic\services\CrudService.class
+com\fedebonel\springpetclinic\model\Person.class
+com\fedebonel\springpetclinic\services\map\PetServiceMap.class
+com\fedebonel\springpetclinic\services\map\AbstractServiceMap.class
+com\fedebonel\springpetclinic\services\VetService.class
+com\fedebonel\springpetclinic\services\map\OwnerServiceMap.class
+com\fedebonel\springpetclinic\services\map\VetServiceMap.class
