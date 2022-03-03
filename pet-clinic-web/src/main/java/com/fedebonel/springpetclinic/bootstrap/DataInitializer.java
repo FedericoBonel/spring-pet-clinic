@@ -1,11 +1,9 @@
 package com.fedebonel.springpetclinic.bootstrap;
 
-import com.fedebonel.springpetclinic.model.Owner;
-import com.fedebonel.springpetclinic.model.Pet;
-import com.fedebonel.springpetclinic.model.PetType;
-import com.fedebonel.springpetclinic.model.Vet;
+import com.fedebonel.springpetclinic.model.*;
 import com.fedebonel.springpetclinic.services.OwnerService;
 import com.fedebonel.springpetclinic.services.PetTypeService;
+import com.fedebonel.springpetclinic.services.SpecialityService;
 import com.fedebonel.springpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -20,9 +18,10 @@ import java.time.LocalDate;
 @Component
 public class DataInitializer implements CommandLineRunner {
 
-   private final OwnerService ownerService;
-   private final VetService vetService;
-   private final PetTypeService petTypeService;
+    private final OwnerService ownerService;
+    private final VetService vetService;
+    private final PetTypeService petTypeService;
+    private final SpecialityService specialityService;
 
     /**
      * Springs generates the dependency injection by
@@ -30,15 +29,22 @@ public class DataInitializer implements CommandLineRunner {
      */
     public DataInitializer(OwnerService ownerService,
                            VetService vetService,
-                           PetTypeService petTypeService) {
+                           PetTypeService petTypeService,
+                           SpecialityService specialityService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
+        this.specialityService = specialityService;
     }
 
     @Override
     public void run(String... args) throws Exception {
+        // Check if there is no data in the service, and if so initialize it
+        int count = petTypeService.findAll().size();
+        if (count == 0) initializeData();
+    }
 
+    private void initializeData() {
         // ------------------------ Pet Types
 
         PetType cat = new PetType();
@@ -50,6 +56,25 @@ public class DataInitializer implements CommandLineRunner {
         PetType savedDogPetType = petTypeService.save(dog);
 
         System.out.println("Loaded PetTypes ----------");
+
+        // ------------------------ Specialities
+
+        Speciality radiology = new Speciality();
+        radiology.setDescription("Radiology");
+
+        Speciality savedRadio = specialityService.save(radiology);
+
+        Speciality surgery = new Speciality();
+        surgery.setDescription("Surgery");
+
+        Speciality savedSurge = specialityService.save(surgery);
+
+        Speciality dentistry = new Speciality();
+        dentistry.setDescription("Dentistry");
+
+        Speciality savedDenti = specialityService.save(dentistry);
+
+        System.out.println("Loaded Specialities ----------");
 
         // ------------------------ Owners and Pets
 
@@ -92,15 +117,17 @@ public class DataInitializer implements CommandLineRunner {
         Vet vet1 = new Vet();
         vet1.setFirstName("Marcos");
         vet1.setLastName("Lorenzini");
+        vet1.getSpecialties().add(radiology);
 
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
         vet2.setFirstName("Bartolome");
         vet2.setLastName("Veronzi");
+        vet2.getSpecialties().add(surgery);
 
         vetService.save(vet2);
 
-        System.out.println("Loaded the vets ----------");
+        System.out.println("Loaded Vets ----------");
     }
 }

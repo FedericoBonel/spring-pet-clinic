@@ -1,15 +1,15 @@
 package com.fedebonel.springpetclinic.services.map;
 
-import com.fedebonel.springpetclinic.model.Specialty;
+import com.fedebonel.springpetclinic.model.Speciality;
 import com.fedebonel.springpetclinic.services.SpecialityService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class SpecialityServiceMap extends AbstractServiceMap<Specialty, Long> implements SpecialityService {
+public class SpecialityServiceMap extends AbstractServiceMap<Speciality, Long> implements SpecialityService {
     @Override
-    public Set<Specialty> findAll() {
+    public Set<Speciality> findAll() {
         return super.findAll();
     }
 
@@ -19,17 +19,17 @@ public class SpecialityServiceMap extends AbstractServiceMap<Specialty, Long> im
     }
 
     @Override
-    public void delete(Specialty object) {
+    public void delete(Speciality object) {
         super.delete(object);
     }
 
     @Override
-    public Specialty save(Specialty object) {
+    public Speciality save(Speciality object) {
         return super.save(object);
     }
 
     @Override
-    public Specialty findById(Long id) {
+    public Speciality findById(Long id) {
         return super.findById(id);
     }
 }
