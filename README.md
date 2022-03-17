@@ -1,3 +1,4 @@
 # spring-pet-clinic
 
-Basic Spring Framework Pet Clinic Application to get a hold of Spring concepts
+Re interpretation of the Spring Framework Pet Clinic Application to get a hold of Spring concepts. 
+It's based on the original spring example aplication adn provides the same functionalities but it's changed in it's code and implementation. Could be seen as a refactor but I like to call it a re interpretation because it's a whole new development of the application.
