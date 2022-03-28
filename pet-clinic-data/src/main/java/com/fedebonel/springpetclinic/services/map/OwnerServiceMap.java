@@ -5,6 +5,7 @@ import com.fedebonel.springpetclinic.model.Pet;
 import com.fedebonel.springpetclinic.services.OwnerService;
 import com.fedebonel.springpetclinic.services.PetService;
 import com.fedebonel.springpetclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -13,6 +14,7 @@ import java.util.Set;
  * Implementation of the map service for owners
  */
 @Service
+@Profile({"default", "map"})
 public class OwnerServiceMap extends AbstractServiceMap<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;

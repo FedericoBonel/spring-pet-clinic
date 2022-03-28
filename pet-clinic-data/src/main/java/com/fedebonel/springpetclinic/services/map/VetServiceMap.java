@@ -4,6 +4,7 @@ import com.fedebonel.springpetclinic.model.Speciality;
 import com.fedebonel.springpetclinic.model.Vet;
 import com.fedebonel.springpetclinic.services.SpecialityService;
 import com.fedebonel.springpetclinic.services.VetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -13,6 +14,7 @@ import java.util.Set;
  * Implementation of the map service for vets of the clinic
  */
 @Service
+@Profile({"default", "map"})
 public class VetServiceMap extends AbstractServiceMap<Vet, Long> implements VetService {
 
     private final SpecialityService specialityService;
