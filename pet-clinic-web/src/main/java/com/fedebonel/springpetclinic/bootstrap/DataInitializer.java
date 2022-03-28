@@ -1,10 +1,7 @@
 package com.fedebonel.springpetclinic.bootstrap;
 
 import com.fedebonel.springpetclinic.model.*;
-import com.fedebonel.springpetclinic.services.OwnerService;
-import com.fedebonel.springpetclinic.services.PetTypeService;
-import com.fedebonel.springpetclinic.services.SpecialityService;
-import com.fedebonel.springpetclinic.services.VetService;
+import com.fedebonel.springpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -22,6 +19,7 @@ public class DataInitializer implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
     /**
      * Springs generates the dependency injection by
@@ -30,11 +28,13 @@ public class DataInitializer implements CommandLineRunner {
     public DataInitializer(OwnerService ownerService,
                            VetService vetService,
                            PetTypeService petTypeService,
-                           SpecialityService specialityService) {
+                           SpecialityService specialityService,
+                           VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -76,7 +76,7 @@ public class DataInitializer implements CommandLineRunner {
 
         System.out.println("Loaded Specialities ----------");
 
-        // ------------------------ Owners and Pets
+        // ------------------------ Owners, Pets and Visits
 
         Owner owner1 = new Owner();
         owner1.setFirstName("Federico");
@@ -102,7 +102,7 @@ public class DataInitializer implements CommandLineRunner {
         owner2.setTelephone("123123122");
 
         Pet owner2Pet = new Pet();
-        owner2Pet.setName("Beto");
+        owner2Pet.setName("Antoni");
         owner2Pet.setPetType(cat);
         owner2Pet.setBirthDate(LocalDate.now());
         owner2Pet.setOwner(owner2);
@@ -110,7 +110,14 @@ public class DataInitializer implements CommandLineRunner {
 
         ownerService.save(owner2);
 
-        System.out.println("Loaded Owners ----------");
+        Visit owner2PetVisit = new Visit();
+        owner2PetVisit.setPet(owner2Pet);
+        owner2PetVisit.setDate(LocalDate.now());
+        owner2PetVisit.setDescription("First Check Up");
+
+        visitService.save(owner2PetVisit);
+
+        System.out.println("Loaded Owners, Pets, and Visits----------");
 
         // ------------------------ Vets
 
