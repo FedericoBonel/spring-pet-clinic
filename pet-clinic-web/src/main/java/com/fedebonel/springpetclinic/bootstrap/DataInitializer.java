@@ -39,7 +39,7 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // Check if there is no data in the service, and if so initialize it
+        // Check if there is no data in the service that's getting created by spring, and if so initialize it
         int count = petTypeService.findAll().size();
         if (count == 0) initializeData();
     }
