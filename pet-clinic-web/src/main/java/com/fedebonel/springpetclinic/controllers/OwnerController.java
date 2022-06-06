@@ -91,12 +91,18 @@ public class OwnerController {
         }
     }
 
+    /**
+     * Handler for GET requests to show the creation form for owners
+     */
     @GetMapping("/new")
     public String createOwnerForm(Model model) {
         model.addAttribute("owner", Owner.builder().build());
         return "owners/createOrUpdateOwnerForm";
     }
 
+    /**
+     * Handler for POST requests to create owners
+     */
     @PostMapping("/new")
     public String createOwner(@Valid Owner owner, BindingResult result) {
         // If there were any errors show again the form because the owner is invalid
@@ -108,12 +114,18 @@ public class OwnerController {
         return "redirect:/owners/" + savedOwner.getId();
     }
 
+    /**
+     * Handler for GET requests to show the update form for owners
+     */
     @GetMapping("/{ownerId}/edit")
     public String editOwnerForm(@PathVariable Long ownerId, Model model) {
         model.addAttribute("owner", ownerService.findById(ownerId));
         return "owners/createOrUpdateOwnerForm";
     }
 
+    /**
+     * Handler for POST requests to show the update form for owners
+     */
     @PostMapping("/{ownerId}/edit")
     public String editOwner(@PathVariable Long ownerId, @Valid Owner owner, BindingResult result) {
         // If there were any errors show again the form because the owner is invalid
