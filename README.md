@@ -13,7 +13,6 @@ It could be seen as a "massive refactor", but I like to call it a "re-interpreta
 
 * SpringBoot
 * Thymeleaf
-* BootStrap
 * JQuery
 * Lombok
 * Mockito + JUnit5
