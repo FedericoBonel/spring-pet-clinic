@@ -76,7 +76,7 @@ public class OwnerController {
         }
 
         // Get all the owners with that or similar to that lastname
-        List<Owner> owners = ownerService.findAllByLastNameLike(owner.getLastName());
+        List<Owner> owners = ownerService.findByLastNameContainingIgnoreCase(owner.getLastName());
 
         if (owners.isEmpty()) {
             // If no owners, then show error page

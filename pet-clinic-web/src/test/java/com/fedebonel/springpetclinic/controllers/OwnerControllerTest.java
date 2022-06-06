@@ -44,7 +44,7 @@ class OwnerControllerTest {
     @Test
     void listOwners() throws Exception {
         // Simulate the data in the service
-        when(ownerService.findAllByLastNameLike(anyString())).thenReturn(data.stream().toList());
+        when(ownerService.findByLastNameContainingIgnoreCase(anyString())).thenReturn(data.stream().toList());
 
         // Make the http get request
         mockMvc.perform(get("/owners"))
@@ -52,7 +52,7 @@ class OwnerControllerTest {
                 .andExpect(view().name("owners/ownersList"))
                 .andExpect(model().attribute("listOwners", hasSize(data.size())));
 
-        verify(ownerService).findAllByLastNameLike(anyString());
+        verify(ownerService).findByLastNameContainingIgnoreCase(anyString());
     }
 
     @Test

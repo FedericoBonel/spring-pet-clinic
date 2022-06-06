@@ -12,5 +12,5 @@ import java.util.List;
 @Repository
 public interface OwnerRepository extends CrudRepository<Owner, Long> {
     Owner findByLastName(String lastName);
-    List<Owner> findAllByLastNameLike(String lastName);
+    List<Owner> findByLastNameContainingIgnoreCase(String lastName);
 }
