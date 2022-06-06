@@ -8,6 +8,8 @@ import com.fedebonel.springpetclinic.services.PetTypeService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -74,5 +76,17 @@ public class OwnerServiceMap extends AbstractServiceMap<Owner, Long> implements 
                 .stream()
                 .filter(owner -> owner.getLastName().equals(lastName))
                 .findFirst().orElse(null);
+    }
+
+    @Override
+    public List<Owner> findAllByLastNameLike(String lastName) {
+        Set<Owner> owners = super.findAll();
+        List<Owner> matchingOwners = new ArrayList<>();
+
+        owners.stream()
+                .filter(owner -> owner.getLastName().toLowerCase().contains(lastName.toLowerCase()))
+                .forEach(matchingOwners::add);
+
+        return matchingOwners;
     }
 }

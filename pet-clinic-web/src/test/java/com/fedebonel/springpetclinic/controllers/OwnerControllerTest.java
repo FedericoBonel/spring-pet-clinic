@@ -60,7 +60,8 @@ class OwnerControllerTest {
         // Make HTTP get request
         mockMvc.perform(get("/owners/find"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("notimplemented"));
+                .andExpect(model().attributeExists("owner"))
+                .andExpect(view().name("owners/findOwners"));
 
         // Verify that there are no interactions with the service
         verifyNoInteractions(ownerService);

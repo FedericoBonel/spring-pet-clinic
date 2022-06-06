@@ -1,12 +1,18 @@
 package com.fedebonel.springpetclinic.controllers;
 
+import com.fedebonel.springpetclinic.model.Owner;
 import com.fedebonel.springpetclinic.services.OwnerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 
 /**
@@ -23,9 +29,17 @@ public class OwnerController {
     }
 
     /**
+     * Custom HTTP parameter binding to protect objects id from form inputs
+     */
+    @InitBinder
+    public void setAllowedFields(WebDataBinder binder) {
+        binder.setDisallowedFields("id");
+    }
+
+    /**
      * Handler of GET requests to show owners page
      */
-    @GetMapping({"", "/index", "/index.html"})
+    @GetMapping({"/index", "/index.html"})
     public String listOwners(Model model){
         model.addAttribute("owners", ownerService.findAll());
         return "owners/index";
@@ -44,8 +58,38 @@ public class OwnerController {
     /**
      * Handler of GET requests to search for a specific owner
      */
-    @RequestMapping({"/find"})
+    @GetMapping({"/find"})
     public String findOwners(Model model){
-        return "notimplemented";
+        model.addAttribute("owner", Owner.builder().build());
+        return "owners/findOwners";
+    }
+
+    /**
+     * Handler of GET requests to process searches for specific owners
+     */
+    @GetMapping
+    public String processFindOwners(Owner owner, BindingResult bindingResult, Model model){
+        // Allow parameterless searches for seeing all owners
+        if (owner.getLastName() == null) {
+            // This will allow the JPA repository to get all the owners
+            owner.setLastName("");
+        }
+
+        // Get all the owners with that or similar to that lastname
+        List<Owner> owners = ownerService.findAllByLastNameLike(owner.getLastName());
+
+        if (owners.isEmpty()) {
+            // If no owners, then show error page
+            bindingResult.rejectValue("lastName", "notFound", "not found");
+            return "owners/findOwners";
+        } else if (owners.size() == 1) {
+            // If 1 owner redirect to that owner
+            model.addAttribute("owner", owners.get(0));
+            return "redirect:/owners/" + owners.get(0).getId();
+        } else {
+            // If multiple owners redirect to the list of owners
+            model.addAttribute("listOwners", owners);
+            return "owners/ownersList";
+        }
     }
 }
