@@ -3,7 +3,10 @@ package com.fedebonel.springpetclinic.controllers;
 import com.fedebonel.springpetclinic.services.OwnerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 
 /**
@@ -20,15 +23,27 @@ public class OwnerController {
     }
 
     /**
-     * Listens to request to the /owners path and returns a view populated with all the owners contained in the ownerService
+     * Handler of GET requests to show owners page
      */
-    @RequestMapping({"", "/index", "/index.html"})
+    @GetMapping({"", "/index", "/index.html"})
     public String listOwners(Model model){
         model.addAttribute("owners", ownerService.findAll());
         return "owners/index";
     }
 
-    // TODO: Implement the find owners functionality
+    /**
+     * Handler of GET requests to show a specific owner
+     */
+    @GetMapping({"/{ownerId}"})
+    public ModelAndView showOwner(@PathVariable Long ownerId) {
+        ModelAndView modelAndView = new ModelAndView("owners/ownerDetails");
+        modelAndView.addObject("owner", ownerService.findById(ownerId));
+        return modelAndView;
+    }
+
+    /**
+     * Handler of GET requests to search for a specific owner
+     */
     @RequestMapping({"/find"})
     public String findOwners(Model model){
         return "notimplemented";
