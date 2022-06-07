@@ -65,7 +65,6 @@ public class VisitController {
 
         // Store the relationship and save the visit
         Pet pet = petService.findById(petId);
-        pet.getVisits().add(visit);
         visit.setPet(pet);
         visitService.save(visit);
 

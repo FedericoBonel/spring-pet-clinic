@@ -4,12 +4,12 @@
 
 ## What's this?
 
-A re-interpretation of the classical Spring Framework Pet Clinic Application. I originally developed it to get a robust hold of Spring concepts. 
+A re-interpretation of the classic Spring Framework Pet Clinic Application. I originally developed it to get a robust hold of Spring concepts. 
 It's based on the original spring example application and provides the same functionalities, but it's different in its code and implementation (since it was made from scratch). 
 It could be seen as a "massive refactor", but I like to call it a "re-interpretation" because it's a whole new development of the application as if it was new.
 
 
-## Tech
+## Tech in use
 
 * SpringBoot
 * Thymeleaf
@@ -18,4 +18,9 @@ It could be seen as a "massive refactor", but I like to call it a "re-interpreta
 * Mockito + JUnit5
 * Spring MVC
 * Spring Data JPA + Hibernate
-* MySQL
+* MySQL & H2 in memory database
+* Much more!
+
+## Take a look at it!
+
+![screenRecord](https://media2.giphy.com/media/9tVOjlIjGtBUFiYLDQ/giphy.gif?cid=790b76117e29ab15f32ec873cc519adfbbad5f5ecd02848b&rid=giphy.gif&ct=g)

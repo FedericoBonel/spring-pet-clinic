@@ -42,4 +42,9 @@ public class Pet extends BaseEntity{
         this.birthDate = birthDate;
         this.visits = visits != null && visits.size() > 0 ? visits : new HashSet<>();
     }
+
+    @Override
+    public String toString(){
+        return name;
+    }
 }
