@@ -79,6 +79,7 @@ public class PetController {
             return "pets/createOrUpdatePetForm";
         }
 
+        // Save the relationship and persist it
         pet.setOwner(owner);
         petService.save(pet);
         return "redirect:/owners/" + owner.getId();
@@ -87,7 +88,7 @@ public class PetController {
     /**
      * Handler for GET requests to show the pet update form
      */
-    @GetMapping("pets/{petId}/edit")
+    @GetMapping("/pets/{petId}/edit")
     public String updatePetForm(@PathVariable Long petId, Model model) {
         model.addAttribute("pet", petService.findById(petId));
         return "pets/createOrUpdatePetForm";
@@ -96,7 +97,7 @@ public class PetController {
     /**
      * Handler for POST requests to update a pet
      */
-    @PostMapping("pets/{petId}/edit")
+    @PostMapping("/pets/{petId}/edit")
     public String updatePet(@Valid Pet pet, BindingResult result, Owner owner, Model model) {
 
         if (result.hasErrors()) {
@@ -105,6 +106,7 @@ public class PetController {
             return "pets/createOrUpdatePetForm";
         }
 
+        // Save the relationship and persist it
         pet.setOwner(owner);
         petService.save(pet);
         return "redirect:/owners/" + owner.getId();
