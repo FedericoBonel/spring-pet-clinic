@@ -1,6 +1,5 @@
 package com.fedebonel.springpetclinic.controllers;
 
-import com.fedebonel.springpetclinic.model.Owner;
 import com.fedebonel.springpetclinic.model.Pet;
 import com.fedebonel.springpetclinic.model.Visit;
 import com.fedebonel.springpetclinic.services.OwnerService;
@@ -41,11 +40,9 @@ public class VisitController {
     @GetMapping("/owners/{ownerId}/pets/{petId}/visits/new")
     public String createVisitForm(@PathVariable Long ownerId, @PathVariable Long petId, Model model) {
         Pet pet = petService.findById(petId);
-        Owner owner = ownerService.findById(ownerId);
         Visit visit = new Visit();
         pet.getVisits().add(visit);
         visit.setPet(pet);
-        model.addAttribute("owner", owner);
         model.addAttribute("visit", visit);
         model.addAttribute("pet", pet);
         return "pets/createOrUpdateVisitForm";

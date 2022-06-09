@@ -125,6 +125,7 @@ public class DataInitializer implements CommandLineRunner {
         vet1.setFirstName("Marcos");
         vet1.setLastName("Lorenzini");
         vet1.getSpecialties().add(radiology);
+        vet1.getSpecialties().add(surgery);
 
         vetService.save(vet1);
 

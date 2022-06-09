@@ -6,7 +6,8 @@
 
 A re-interpretation of the classic Spring Framework Pet Clinic Application. I originally developed it to get a robust hold of Spring concepts. 
 It's based on the original spring example application and provides the same functionalities, but it's different in its code and implementation (since it was made from scratch). 
-It could be seen as a "massive refactor", but I like to call it a "re-interpretation" because it's a whole new development of the application as if it was new.
+It could be seen as a "massive refactor", but I like to call it a "re-interpretation" because it's a whole new 
+development of the application as if it was new (mantaining the same front-end look and feel).
 
 
 ## Tech in use
