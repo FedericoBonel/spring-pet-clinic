@@ -2,6 +2,7 @@ package com.fedebonel.springpetclinic.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -11,13 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("")
 public class IndexController {
 
-    @RequestMapping({"index","index.html"})
+    @GetMapping({"index","index.html"})
     public String index() {
         return "index";
     }
 
     // TODO: Implement the throw error functionality
-    @RequestMapping({"/oups"})
+    @GetMapping({"/oups"})
     public String throwError(Model model){
         return "notimplemented";
     }
